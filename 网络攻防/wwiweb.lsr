@@ -1,0 +1,105 @@
+{
+    "actions": [
+        {
+            "parameters": {
+            },
+            "target": "http://10.173.81.142/exercise/wwiweb",
+            "timeout": 20000,
+            "type": "navigate"
+        },
+        {
+            "parameters": {
+                "friendly": "A with text \"这里\""
+            },
+            "target": "HTML/BODY/DIV[1]/BUTTON/SPAN/A",
+            "timeout": 20000,
+            "type": "click"
+        },
+        {
+            "parameters": {
+                "friendly": "DIV with text  登录 单击图片更换验证码 没有账号？注册 "
+            },
+            "target": "HTML/BODY/SECTION/DIV/DIV/DIV[1]/DIV[1]/DIV[1]",
+            "timeout": 20000,
+            "type": "click"
+        },
+        {
+            "parameters": {
+                "friendly": "A with text \"这里\""
+            },
+            "target": "HTML/BODY/DIV[1]/BUTTON/SPAN/A",
+            "timeout": 20000,
+            "type": "click"
+        },
+        {
+            "parameters": {
+                "friendly": "DIV with text  登录 单击图片更换验证码 没有账号？注册 "
+            },
+            "target": "HTML/BODY/SECTION/DIV/DIV/DIV[1]/DIV[1]/DIV[1]",
+            "timeout": 20000,
+            "type": "click"
+        },
+        {
+            "parameters": {
+            },
+            "target": "",
+            "timeout": 20000,
+            "type": "manual"
+        },
+        {
+            "parameters": {
+                "friendly": "DIV with text  登录 单击图片更换验证码 没有账号？注册 "
+            },
+            "target": "HTML/BODY/SECTION/DIV/DIV/DIV[1]/DIV[1]/DIV[1]",
+            "timeout": 20000,
+            "type": "click"
+        },
+        {
+            "parameters": {
+                "friendly": "DIV with text  登录 单击图片更换验证码 没有账号？注册 "
+            },
+            "target": "HTML/BODY/SECTION/DIV/DIV/DIV[1]/DIV[1]/DIV[1]",
+            "timeout": 20000,
+            "type": "click"
+        },
+        {
+            "parameters": {
+                "friendly": "DIV with text  登录 单击图片更换验证码 没有账号？注册 "
+            },
+            "target": "HTML/BODY/SECTION/DIV/DIV/DIV[1]/DIV[1]/DIV[1]",
+            "timeout": 20000,
+            "type": "click"
+        },
+        {
+            "parameters": {
+                "friendly": "DIV with text  登录 单击图片更换验证码 没有账号？注册 "
+            },
+            "target": "HTML/BODY/SECTION/DIV/DIV/DIV[1]/DIV[1]/DIV[1]",
+            "timeout": 20000,
+            "type": "click"
+        },
+        {
+            "parameters": {
+                "friendly": "DIV with text  登录 单击图片更换验证码 没有账号？注册 "
+            },
+            "target": "HTML/BODY/SECTION/DIV/DIV/DIV[1]/DIV[1]/DIV[1]",
+            "timeout": 20000,
+            "type": "click"
+        },
+        {
+            "parameters": {
+                "friendly": "A with text \"这里\""
+            },
+            "target": "HTML/BODY/DIV[1]/BUTTON/SPAN/A",
+            "timeout": 20000,
+            "type": "click"
+        }
+    ],
+    "detection": {
+        "pattern": "200",
+        "request": "GET http://10.173.81.142/exercise/wwiweb/?c=user HTTP/1.1\n\n",
+        "type": "statusis"
+    },
+    "restrictions": [
+    ]
+}
