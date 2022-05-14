@@ -1,0 +1,79 @@
+<?php require COMMON_VIEW.'header1.html';?>
+<!-- 主体部分 -->		
+		<div class="content">
+			<div id="change">
+			<div class="main">
+                <div class="detail">
+                	<form action="./?c=user&a=edit" method="post">
+                    	<table class="userinfo">
+                    		<tr>
+                    			<th>姓名：</th>
+                    			<td><?php echo $user['name']; ?></td>
+                    		</tr>
+                    		<tr>
+                    			<th>性别：</th>
+                    			<td>
+                    				<select name="gender">
+                    					<?php foreach($gender
+										 as $v): ?>
+                    						<?php if($user['gender'] == $v): ?>
+                    						<option value="<?php echo $v; ?>" selected><?php echo $v; ?></option>
+                    						<?php else:?>
+                    						<option value="<?php echo $v; ?>" ><?php echo $v; ?></option>
+                    						<?php endif;?>
+                    					<?php endforeach;?>
+                    				</select>
+                    			</td>
+                    		</tr>
+                    		<tr>
+                    		<tr>
+                    			<th>身份：</th>
+                    			<td>
+                    				<select name="role">
+                    					<?php foreach($role as $v): ?>
+                    						<?php if($user['role'] == $v): ?>
+                    						<option value="<?php echo $v; ?>" selected><?php echo $v; ?></option>
+                    						<?php else:?>
+                    						<option value="<?php echo $v; ?>" ><?php echo $v; ?></option>
+                    						<?php endif;?>
+                    					<?php endforeach;?>
+                    				</select>
+                    			</td>
+                    		</tr>
+                    		<tr>
+                    			<th>邮箱：</th>
+                    			<td>
+                    				<textarea name="email"><?php echo $user['email']; ?></textarea>
+                    			</td>
+                    		</tr>
+                    		<tr>
+                    			<th>个人简介：</th>
+                    			<td>
+                    				<textarea name="description"><?php echo $user['description']; ?></textarea>
+                    			</td>
+                    		</tr>
+                    		<tr>
+                    			<td colspan="2" align="center">
+                    				<button class="button9" type="reset" value="重置" >重置</button>
+									<button class="button9" type="submit" value="保存" >保存</button>
+                    			
+                    			</td>
+                    		</tr>
+                    		<tr>
+                    			<td colspan="2" align="center">
+                    			<?php if(isset($success)):?>
+                    			<span class="tip">用户数据保存成功！</span>
+                    			<?php endif; ?>
+                    			</td>
+                    		</tr>
+                    	</table>
+                    </form>
+					
+                	<div class="user-icon-top"></div>
+                	<div class="user-icon-bottom"></div>
+                </div>
+                <div class="clear"></div>
+			</div>
+		</div>
+		</div>
+<?php require COMMON_VIEW.'footer.html';?>

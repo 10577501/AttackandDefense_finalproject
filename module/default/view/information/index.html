@@ -1,0 +1,30 @@
+<?php require COMMON_VIEW.'header.html'?>
+		<div class="content">
+			<div id="focus">
+			<?php foreach($data as $f): ?>
+				<div class="card box-shadow">
+					<div class="card-header">
+					  <div class="card-title h5">
+						<h2><a href="./?c=Information&a=detail&id=<?php echo $f['id']; ?>">
+							<?php echo htmlspecialchars($f['title'])?>
+						</a></h2>
+						</div>
+					  <div class="card-subtitle text-gray"></div>
+					</div>
+					<div class="card-body">
+					  <p></p>
+					  <p v-html="item.evidence">作者：<?php echo htmlspecialchars($f['author']); ?>&nbsp;&nbsp;&nbsp;&nbsp;</p>
+					</div>
+					<div class="card-footer">
+					  <a class="c-hand" target="blank">浏览量：<?php echo htmlspecialchars($f['visits']); ?>&nbsp;&nbsp;&nbsp;&nbsp;</a>
+					  <span class="text-gray">发布时间：<?php echo htmlspecialchars($f['pub']); ?></span>
+					</div>
+			  </div>
+      			<?php endforeach; ?>
+
+      			<div class="box4_p"><?php echo $pageBar; ?></div>
+                <div class="clear"></div>
+                
+			</div>
+		</div>
+<?php require COMMON_VIEW.'footer.html'?>

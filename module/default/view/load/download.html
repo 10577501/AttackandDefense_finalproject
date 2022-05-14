@@ -1,0 +1,41 @@
+<?php require COMMON_VIEW.'header1.html';?>
+		<div id="change">
+			<div class="main">
+				<div class="userinfo">
+        		<form action="./?c=load&a=download" method='post'>
+					<table  width=100% align="center" text-align="center">
+					<tr>
+					<td>序号</td>
+					<td>文件名</td>
+					<td>图片</td>
+					<td>大小</td>
+					<td>最后修改时间</td>
+					<td>
+						<input type='submit' name='delete' value="删除">
+						<!-- <button class="submit" type="delete" value="删除" >删除</button> -->
+						<input type='submit' name="download" value="单张下载">
+						<input type='submit' name="downloadall" value="批量下载">
+						</td>        
+					</tr>
+					<?php
+					foreach($picarr as $key=>$value){
+						if($key>1){                        //去掉前面的两个空值;
+					echo "<tr>";
+					echo "<td>".($key-1)."</td>";               //序号
+					echo "<td>".$value."</td>";                  //文件名
+					echo "<td><img src='./public/uploads/pic/".$value."' width='200' height='100'/></td>";  //图片
+					echo "<td>".format_bytes(filesize("./public/uploads/pic/$value"))."</td>";                             //filesize 获取文件大小(单位:B); 
+					echo "<td>".date("Y-m-d H:i:s", filemtime("./public/uploads/pic/$value"))."</td>";               //filemtime  获取文件最后修改时间（单位：毫秒） date转换时间
+					echo "<td><input type='checkbox' name='del[]' value='".$value."'/></td>";    //多选框传值(传的是文件名)    
+					echo "</tr>";
+						}            
+					}  
+					
+				?>        
+				
+				</table></form></div>
+			
+			<div class="clear"></div>
+		</div></div>
+
+	<?php require COMMON_VIEW.'footer.html';?>

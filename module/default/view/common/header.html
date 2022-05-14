@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html >
+  <head>
+    <meta charset="utf-8">
+    <title><?php echo $title;?> | World Wildlife Information</title>
+    <link rel="icon" href="<?php echo PUBLIC_PATH.'common/image/logoico.ico';?>" type="image/x-icon"/> 
+
+    <link rel="stylesheet" media="all" href="<?php echo PUBLIC_PATH.'common/css/style.css'?>">
+    <link rel="stylesheet" media="all" href="<?php echo PUBLIC_PATH.'common/css/control.css'?>">
+    <link rel="stylesheet" media="all" href="<?php echo PUBLIC_PATH.'common/css/about.css'?>">
+    <link rel="stylesheet" media="all" href="<?php echo PUBLIC_PATH.'common/css/style1.css'?>">
+    <link rel="stylesheet" media="all" href="<?php echo PUBLIC_PATH.'common/css/my.css'?>">
+    
+    <script src="<?php echo PUBLIC_PATH.'common/js/jquery-1.11.3.min.js'?>"></script>
+    <script src="<?php echo PUBLIC_PATH.'common/js/jquery.min.js'?>"></script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>  
+    <script type="text/javascript">  
+        var $$ = jQuery.noConflict();  
+            $$(document).ready(function () {  
+                $$('.nav li a').each(function () {  
+                    if ($$($$(this))[0].href == String(window.location))  
+                        $$(this).parent().addClass('active');  
+                });  
+        })    
+    </script>  
+
+  </head>
+
+  <body>
+
+    <div class="header">
+        <a href="./"><img src="<?php echo PUBLIC_PATH.'common/image/logo.png'?>" alt="logo" width="500px" height="150px"  ></a>
+        <button class="button button1">
+          	<?php if(ISLOGIN):?>
+          	<span>你好，<a href="./?c=user&a=index">&nbsp<?php echo $this->user['name']?>&nbsp</a></span>
+          	<?php else:?>
+          	<span>您还没有登录，请点<a href="./?c=user&a=login">这里</a>登录</span>
+          	<?php endif;?>
+          </button>
+          <a href="./?c=load&a=download"><button class="button button2" >下载</button></a>
+          <a href="./?c=load&a=upload"><button class="button button3">上传</button></a>
+        <div id="searchui">
+
+
+	        <form id="searchform" action="http://www.baidu.com/baidu" target="_blank" method="get">
+		        <input name="sitesearch" type="hidden" value="">
+		        <input name="as_q" title="在此输入搜索内容" class="box" id="searched_content" type="text" placeholder="Search..">
+                    <button class="button button4" type="submit" formaction="https://www.baidu.com" ><img src="<?php echo PUBLIC_PATH.'common/image/iov-search.png'?>" alt="search" width="46" height="46"></button>                           
+	        </form> 
+       </div>
+       <!--主容器-->
+    <div class="container">
+
+        <!--控制转到第几张按钮-->
+        <input id="btn1"  name="dir" type="radio"  />
+        <input id="btn2"  name="dir" type="radio"  />
+        <input id="btn3" name="dir" type="radio"  />
+        <input id="btn4" name="dir" type="radio"  />
+        <input id="btn5" name="dir" type="radio"  />
+
+        <!--控制往左边轮播-->
+        <input id="left_btn1" class="dir_btn" name="dir" type="radio"  />
+        <input id="left_btn2" class="dir_btn" name="dir" type="radio"  />
+        <input id="left_btn3" class="dir_btn" name="dir" type="radio"  />
+        <input id="left_btn4" class="dir_btn" name="dir" type="radio"  />
+        <input id="left_btn5" class="dir_btn" name="dir" type="radio"  />
+
+        <!--控制往右边轮播-->
+        <input id="right_btn1" class="dir_btn"  name="dir" type="radio"  />
+        <input id="right_btn2"  class="dir_btn" name="dir" type="radio"  />
+        <input id="right_btn3" class="dir_btn" name="dir" type="radio"  />
+        <input id="right_btn4" class="dir_btn" name="dir" type="radio"  />
+        <input id="right_btn5" class="dir_btn" name="dir" type="radio"  />
+
+        <!--存放图片-->
+        <div class="pic">
+
+            <!--给所有图片套一个盒子 通过左边距进行轮播-->
+            <div class="box">
+                <img src="<?php echo PUBLIC_PATH.'common/image/1.jpg'?>">
+                <img src="<?php echo PUBLIC_PATH.'common/image/2.jpg'?>">
+                <img src="<?php echo PUBLIC_PATH.'common/image/3.jpg'?>">
+                <img src="<?php echo PUBLIC_PATH.'common/image/4.jpg'?>">
+                <img src="<?php echo PUBLIC_PATH.'common/image/5.jpg'?>">
+            </div>
+
+            <!--给图片前面加一层图片层 用于实现无缝轮播-->
+            <div class="before_box">
+                <img src="<?php echo PUBLIC_PATH.'common/image/5.jpg'?>">
+                <img src="<?php echo PUBLIC_PATH.'common/image/1.jpg'?>">
+            </div>
+
+            <!--给图片后面加一层图片层 用于实现无缝轮播-->
+            <div class="after_box">
+                <img src="<?php echo PUBLIC_PATH.'common/image/5.jpg'?>">
+                <img src="<?php echo PUBLIC_PATH.'common/image/1.jpg'?>">
+            </div>
+        </div>
+
+        <!--左边的按钮 每次点击都会根据当前是第几张决定显示的按钮-->
+        <div class="left_box dir_box">
+            <label class="left_btn_1 btn_btn_1" for="left_btn1"></label>
+            <label class="left_btn_2 btn_btn_2" for="left_btn2"></label>
+            <label class="left_btn_3 btn_btn_3" for="left_btn3"></label>
+            <label class="left_btn_4 btn_btn_4" for="left_btn4"></label>
+            <label class="left_btn_5 btn_btn_5" for="left_btn5"></label>
+        </div>
+
+        <!--右边的按钮 每次点击都会根据当前是第几张决定显示的按钮-->
+        <div class="right_box dir_box">
+            <label class="right_btn_1 btn_btn_1" for="right_btn1"></label>
+            <label class="right_btn_2 btn_btn_2" for="right_btn2"></label>
+            <label class="right_btn_3 btn_btn_3" for="right_btn3"></label>
+            <label class="right_btn_4 btn_btn_4" for="right_btn4"></label>
+            <label class="right_btn_5 btn_btn_5" for="right_btn5"></label>
+        </div>
+
+        <!--下方按钮 点击各个按钮 决定跳转到第几张-->
+        <div class="count">
+            <ul>
+                <li class="current">
+                    <label class="btn_1" for="btn1"></label>
+                </li>
+                <li>
+                    <label class="btn_2" for="btn2"></label>
+                </li>
+                <li>
+                    <label class="btn_3" for="btn3"></label>
+                </li>
+                <li>
+                    <label class="btn_4" for="btn4"></label>
+                </li>
+                <li>
+                    <label class="btn_5" for="btn5"></label>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+        <div class="nav">
+        <ul>
+            <li ><a href="./">首 页</a></li>
+            <li class="dropdown">
+                <a href="./?c=knowledge&a=Asian"" class="dropbtn">动物知识</a>
+                <div class="dropdown-content">
+                 <a href="./?c=knowledge&a=Asian">亚洲野生动物</a>
+                 <a href="./?c=knowledge&a=Africa">非洲野生动物</a>
+                 <a href="./?c=knowledge&a=America">美洲野生动物</a>
+                 <a href="./?c=knowledge&a=Oceania">大洋洲野生动物</a>
+                 <a href="./?c=knowledge&a=Other">其他野生动物</a>
+             </div>
+            </li>
+            <li class="dropdown">
+                <a  href="./?c=activity" class="dropbtn">专题活动</a>
+                <div class="dropdown-content">
+                 <a href="./?c=activity">鸟类迁徙</a>
+                 <a href="./?c=activity">大熊猫保护合作</a>
+                <a href="./?c=activity">世界野生动植物日</a>
+             </div>
+            </li>
+            <li class="dropdown">
+                <a href="./?c=information" class="dropbtn">资讯百科</a>
+                <div class="dropdown-content">
+                <a href="./?c=information">法律法规</a>
+                <a href="./?c=information">新闻报道</a>
+             </div>
+            <li class="dropdown">
+                <a href="./?c=website" class="dropbtn">关于我们</a>
+                <div class="dropdown-content">
+                 <a href="./?c=website">网站简介</a>
+                 <a href="./?c=website">联系我们</a>
+             </div>
+            <li><audio id="music2" src="<?php echo PUBLIC_PATH.'common/audio/audio.mp3'?>"  loop="loop"></audio> 
+            <a href="javascript:playPause();">
+                <img src="<?php echo PUBLIC_PATH.'common/image/music.png'?>" width="25" height="15" id="music_btn2"/ ></a>
+            </li>
+        </ul>
+        </div>
+    </div>

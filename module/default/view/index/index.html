@@ -1,0 +1,88 @@
+
+<?php require COMMON_VIEW.'header.html';?>
+
+    <div class="content">
+    <h3>We Stand for Wildlife. Stand with Us.</h3>
+    <h4>播放此视频，了解更多关于潘滚和威儿的故事。</h4>
+    <h4>Play this video and learn more about the story of the penguin and the whale.</h4>
+     <video controls="controls" width="1130" height="700"  src="<?php echo PUBLIC_PATH.'common\video\video.mp4';?>"></video>  
+
+    <div id="map">
+    <img src="<?php echo PUBLIC_PATH.'common/image/Conservation Hub.jpeg';?>" width="1130" height="600" border="0" usemap="#planetmap" alt="dmap" />
+        <p>Wildlife Map</p>
+        <h4> 点击地图上感兴趣的位置并开始学习吧！</h4>
+
+        <a target="_blank" href="./?c=knowledge&a=Asian"><button class="button button6"><span>Learn more</span></button></a>
+        <map name="planetmap" id="planetmap">
+
+        <area shape="circle" coords="520,480,40" href ="./?c=knowledge&a=Other" target ="_blank" alt="Other" />
+        <area shape="circle" coords="520,90,40" href ="./?c=knowledge&a=Other" target ="_blank" alt="Other " />
+        <area shape="circle" coords="530,370,40" href ="./?c=knowledge&a=Other" target ="_blank" alt="Other " />
+        <area shape="circle" coords="650,390,40" href ="./?c=knowledge&a=Africa" target ="_blank" alt="Africa " />
+        <area shape="circle" coords="880,350,40" href ="./?c=knowledge&a=Asian" target ="_blank" alt="Asian " />
+        <area shape="circle" coords="940,460,40" href ="./?c=knowledge&a=Oceania" target ="_blank" alt="Oceania" />
+        <area shape="circle" coords="330,430,40" href ="./?c=knowledge&a=Other" target ="_blank" alt="Other" />
+        <area shape="circle" coords="210,270,40" href ="./?c=knowledge&a=America" target ="_blank" alt="America " />
+        <area shape="circle" coords="110,340,40" href ="./?c=knowledge&a=Other" target ="_blank" alt="Other " />
+
+        </map>
+    </div>
+        
+
+    <div class="responsive">
+        <div class="img">
+           <a target="_blank" href="">
+           </a>
+       <div class="desc">
+        <h3>专题活动</h3>
+        <h5>Never before has one species know the weight of its choices, and terrible cost of inaction.</h5>
+       </div>
+       </div>
+  </div>
+
+   <div class="responsive">
+       <div class="img">
+       <div class="tiles">
+           <a class="tile" href="./?c=activity"><img src="<?php echo PUBLIC_PATH.'common/image/7.png';?>"/>
+               <div class="details">
+               <span class="title">鸟类迁徙</span>
+               <span class="info">Migration of Birds </span></div></a>
+           </div>
+   </div>
+   </div>
+
+           <div class="responsive">
+       <div class="img">
+       <div class="tiles">
+           <a class="tile" href="./?c=activity"><img src="<?php echo PUBLIC_PATH.'common/image/8.png';?>"/>
+               <div class="details">
+               <span class="title">大熊猫保护合作</span>
+               <span class="info">Giant Panda Protection Cooperation </span></div></a>
+           </div>
+   </div>
+   </div>
+
+   <div class="responsive">
+       <div class="img">
+       <div class="tiles">
+           <a class="tile" href="./?c=activity"><img src="<?php echo PUBLIC_PATH.'common/image/9.png';?>"/>
+               <div class="details">
+               <span class="title">世界野生动植物日</span>
+               <span class="info">World Wildlife Day </span></div></a>
+           </div>
+   </div>
+   </div>
+    <div class="clearfix"></div>
+        
+
+    <div class="example">
+        <img src="<?php echo PUBLIC_PATH.'common/image/10.jpg';?>" width="1130" height="600" alt="">
+        <p>Information Encyclopedia</p>
+        <h4>《中华人民共和国野生动物保护法》为了保护野生动物，拯救珍贵、濒危野生动物，维护生物多样性和生态平衡，推进生态文明建设，制定本法。</h4>
+
+        <a target="_blank" href="./?c=information"><button class="button button5"><span>Learn more</span></button></a>
+    </div>
+
+    
+
+<?php require COMMON_VIEW.'footer.html';?>
