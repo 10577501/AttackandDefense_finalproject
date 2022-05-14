@@ -1,0 +1,17 @@
+<?php require COMMON_VIEW.'header1.html';?>
+
+          <div id="change">
+			<div class="main">
+                <div id="upload">
+        请选择要上传的文件:<br/>
+    </div><div id="upload">
+        <form action="./?c=load&a=upload" method="post" enctype="multipart/form-data">
+        <input type="file" name="file[]" multiple="multiple"/><br/>   <!--multiple="multiple",可批量上传，使用鼠标或键盘拖选多个文件； --> 
+        <button class="button9" type="submit" value="确认上传" >确认上传</button>
+        </form></div>
+
+    </div></div>
+
+    <?php require COMMON_VIEW.'footer.html';?>
+
+      

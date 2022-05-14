@@ -1,0 +1,53 @@
+<?php require COMMON_VIEW.'header1.html';?>
+<!-- 主体部分 -->		
+		<div class="content">
+			<div id="change">
+			<div class="main">
+                <div class="detail">
+                	<form action="./?c=user&a=news" method="post">
+                    	<table class="userinfo">
+                    		
+                    		<tr>
+                    			<th>标题：</th>
+                    			<td>
+                    				<input type="text" name="title" placeholder="标题" />
+                    			</td>
+                    		</tr>
+                    		<tr>
+                    		<tr>
+                    			<th>作者：</th>
+                    			<td>
+                    				<input type="text" name="author" placeholder="作者" />
+                    			</td>
+                    		</tr>
+                    		<tr>
+                    			<th>内容：</th>
+                    			<td>
+                    				<textarea name="content"></textarea>
+                    			</td>
+                    		</tr>
+                    		<tr>
+                    			<td colspan="2" align="center">
+                    				<button class="button9" type="reset" value="重置" >重置</button>
+									<button class="button9" type="submit" value="提交" >提交</button>
+                    			
+                    			</td>
+                    		</tr>
+                    		<tr>
+                    			<td colspan="2" align="center">
+                    			<?php if(isset($success)):?>
+                    			<span class="tip">已上传标题为：<?php echo $_POST['title'];?>的留言！</span>
+                    			<?php endif; ?>
+                    			</td>
+                    		</tr>
+                    	</table>
+                    </form>
+					
+                	<div class="user-icon-top"></div>
+                	<div class="user-icon-bottom"></div>
+                </div>
+                <div class="clear"></div>
+			</div>
+		</div>
+		</div>
+<?php require COMMON_VIEW.'footer.html';?>
