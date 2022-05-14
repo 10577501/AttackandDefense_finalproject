@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html >
+  <head>
+    <meta charset="utf-8">
+    <title><?php echo $title;?> | World Wildlife Information</title>
+    <link rel="icon" href="<?php echo PUBLIC_PATH.'common/image/logoico.ico';?>" type="image/x-icon"/> 
+
+    <link rel="stylesheet" media="all" href="<?php echo PUBLIC_PATH.'common/css/style.css'?>">
+    <link rel="stylesheet" media="all" href="<?php echo PUBLIC_PATH.'common/css/control.css'?>">
+    <link rel="stylesheet" media="all" href="<?php echo PUBLIC_PATH.'common/css/about.css'?>">
+    <link rel="stylesheet" media="all" href="<?php echo PUBLIC_PATH.'common/css/style1.css'?>">
+    <link rel="stylesheet" type="text/css" href="<?php echo PUBLIC_PATH.'common/css/my.css';?> " />
+    <link rel="stylesheet" media="all" href="<?php echo PUBLIC_PATH.'common/css/style2.css'?>">
+    
+    <script src="<?php echo PUBLIC_PATH.'common/js/jquery-1.11.3.min.js'?>"></script>
+    <script src="<?php echo PUBLIC_PATH.'common/js/jquery.min.js'?>"></script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>  
+        <script type="text/javascript">  
+            var $$ = jQuery.noConflict();  
+            $$(document).ready(function () {  
+                $$('.nav li a').each(function () {  
+                    if ($$($$(this))[0].href == String(window.location))  
+                        $$(this).parent().addClass('active');  
+                });  
+            })    
+        </script>  
+
+  </head>
+
+  <body>
+
+    <div class="header">
+        <a href="./"><img src="<?php echo PUBLIC_PATH.'common/image/logo.png'?>" alt="logo" width="500px" height="150px"  ></a>
+       </div>
+      
+      <div class="banner">
+        <img src="<?php echo PCOMMON_PATH.'image/banner.png';?>"  width=100% height="200px"/>
+    </div>
+
+        <div class="nav">
+        <ul>
+            <ul>
+                <li><a href="./?c=user"><?php echo $this->user['name']?>的用户中心</a></li>
+                <li><a href="./?c=user&a=edit">编辑信息</a></li>
+                <li><a href="./?c=user&a=photo">上传头像</a></li>
+                <li><a href=".?c=load&a=upload">文件上传</a></li>
+                <li><a href=".?c=load&a=download">文件下载</a></li>
+                <li><a href=".?c=user&a=news">资讯留言</a></li>
+                <li><a href="./?c=user&a=logout">退出登录</a></li>
+            </ul>
+            <div class="user-point"></div>
+        </ul>
+        </div>
+    

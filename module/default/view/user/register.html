@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title><?php echo $title;?> | World Wildlife Information</title>
+		<link rel="icon" href="<?php echo PUBLIC_PATH.'common/image/logoico.ico';?>" type="image/x-icon"/> 
+			
+		<script src="<?php echo PUBLIC_PATH.'common/js/jquery.min.js'?>"></script>
+
+		<link rel="stylesheet" href="<?php echo PUBLIC_PATH.'common/css/style1.css'?>">
+
+	</head>
+<body>			
+	<section>
+		<div class="content">
+			
+			<div class="main">
+                <div class="detail">
+					<div class="container">
+						<div class="user singinBx">
+							<div class="formBx">
+								<form action="./?c=user&a=register" method="post">
+									<table>
+										<tr>
+											<h2>注册</h2>
+										</tr>
+										<tr>
+											<td><input type="text" name="username" placeholder="用户名" /></td>
+										</tr>
+										<tr>
+											<td><input type="text" name="phone" placeholder="手机号" /></td>
+										</tr>
+										<tr>
+											<td><input type="password" name="password"  placeholder="密码"/></td>
+										</tr>
+										<tr>
+											<td><input type="password" name="repassword"  placeholder="再次输入密码"/></td>
+										</tr>
+										<tr><td><input type="text" name="captcha"  placeholder="验证码" /></td></tr>
+										<tr><td class="captcha1"><img src="./?c=user&a=captcha" id="captcha1" />
+											<p class="signup">单击图片更换验证码</p></td></tr>
+										<tr>
+											<td><input type="submit" value="&nbsp;&nbsp;注&nbsp;册&nbsp;&nbsp;" /></td>
+										</tr>
+										<tr>
+											<td><p class="signup">已有账号？<a href="#" onclick="topggleForm();">登录</a></p></td>
+										</tr>
+									</table>	
+								</form>
+							</div>
+							<div class="imgBx"><img src="<?php echo PUBLIC_PATH.'common/image/8.png'?>" alt=""></div>
+						</div>
+						<div class="user singupBx">
+							<div class="imgBx"><img src="<?php echo PUBLIC_PATH.'common/image/download2244.png'?>" alt=""></div>
+							<div class="formBx">
+								<form action="./?c=user&a=login" method="post">
+									<table>
+										<tr>
+											<h2>登录</h2>
+										</tr>
+										<tr>
+											<td><input type="text" name="username" placeholder="用户名" /></td>
+										</tr>
+										<tr>
+											<td><input type="password" name="password"  placeholder="密码"/></td>
+										</tr>
+										<tr><td><input type="text" name="captcha"  placeholder="验证码" /></td></tr>
+										<tr><td class="captcha"><img src="./?c=user&a=captcha" id="captcha" />
+											<p class="signup">单击图片更换验证码</p></td></tr>
+										<tr>
+											<td><input type="submit" value="&nbsp;&nbsp;登&nbsp;录&nbsp;&nbsp;" /></td>
+										</tr>
+										<tr>
+											<td><p class="signup">没有账号？<a href="#" onclick="topggleForm();">注册</a></p></td>
+										</tr>
+									</table>	
+								</form>
+							</div>
+						</div>
+					</div>								
+                	<div class="user-icon-top"></div>
+                	<div class="user-icon-bottom"></div>
+                </div>
+                <div class="clear"></div>
+			</div>
+		</div>
+	</section>
+	<script>
+			$(function(){
+				var $img = $("#captcha");
+				var src = $img.attr("src")+"&_=";
+				$img.click(function(){
+					$img.attr("src",src+Math.random())})
+			});	
+	</script>
+	<script>
+		$(function(){
+			var $img = $("#captcha1");
+			var src = $img.attr("src")+"&_=";
+			$img.click(function(){
+				$img.attr("src",src+Math.random())})
+		});	
+	</script>
+	<script type="text/javascript">
+		function topggleForm(){
+			var container = document.querySelector('.container');
+			container.classList.toggle('active');
+		}
+	</script>
+</body>
+</html>

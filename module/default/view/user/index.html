@@ -1,0 +1,24 @@
+﻿<?php require COMMON_VIEW.'header1.html';?>
+<!-- 主体部分 -->
+		<div class="content">
+			<div id="change">
+			<div class="main">
+                <div class="detail">
+                	<table>
+                		
+                		<?php foreach($user as $key=>$v): ?>
+                		<tr>
+                			<td><?php echo $items[$key];?></td>
+                			<td><?php echo $v;?></td>
+                		</tr>
+                		<?php endforeach; ?>
+                		
+                	</table>
+                	<div class="user-icon-top"></div>
+                	<div class="user-icon-bottom"></div>
+                </div>
+                <div class="clear"></div>
+			</div>
+		</div>
+		</div>
+<?php require COMMON_VIEW.'footer.html';?>

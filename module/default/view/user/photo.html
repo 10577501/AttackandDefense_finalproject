@@ -1,0 +1,35 @@
+<?php require COMMON_VIEW.'header1.html';?>
+<!-- 主体部分 -->		
+		<div class="content">
+			<div id="change">
+			<div class="main">
+                <div class="detail">
+					<form method="post" enctype="multipart/form-data">
+						<table class="photo">
+							<tr>
+								<th>头像：</th>
+								<td>
+									<img src="<?php echo $save_path; ?>" alt="用户头像" onerror="this.src='./images/default.png'" />
+								</td>
+							</tr>
+							<tr>
+								<th>上传头像：</th>
+								<td>
+									<input type="file" name="pic" /><button class="button9" type="submit" value="上传" >上传</button>
+								</td>
+							</tr>
+						</table>
+					</form>
+					
+					<script>
+						//点亮当前菜单链接
+						setMenu('photo');
+					</script>
+                	<div class="user-icon-top"></div>
+                	<div class="user-icon-bottom"></div>
+                </div>
+                <div class="clear"></div>
+			</div>
+			</div>
+		</div>
+<?php require COMMON_VIEW.'footer.html';?>

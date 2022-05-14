@@ -1,0 +1,15 @@
+<?php require COMMON_VIEW.'header.html'?>
+<div class="content">
+  <div class="main">
+        <h2 class="title1"><?php echo $data['title'];?></h2>
+        <div class="title2">作者:&nbsp;<?php echo $data['author'];?>&nbsp;&nbsp;
+        					时间:&nbsp;<?php echo $data['pub'];?>&nbsp;&nbsp;
+                  浏览量:&nbsp;<?php echo $data['visits'];?>&nbsp;&nbsp;
+        </div>
+        <p><?php echo $data['content'];?></p>
+    <div class="clear"></div>
+  </div>
+  
+  <a href="./?c=information" ><input type="button" class="button button8" name="Submit" value="返回" ></a>
+
+<?php require COMMON_VIEW.'footer.html'?>
